@@ -164,24 +164,31 @@ for c in chars:
 ## API Reference
 
 ### `graphemes(text: str, is_extended: bool) -> list[str]`
+
 Split a string into grapheme clusters. Set `is_extended=True` for extended grapheme clusters (recommended).
 
 ### `grapheme_indices(text: str, is_extended: bool) -> list[tuple[int, str]]`
+
 Split a string into grapheme clusters with their byte indices.
 
 ### `split_word_bounds(text: str) -> list[str]`
+
 Split a string at word boundaries (includes punctuation and whitespace).
 
 ### `split_word_bound_indices(text: str) -> list[tuple[int, str]]`
+
 Split a string at word boundaries with byte indices.
 
 ### `unicode_words(text: str) -> list[str]`
+
 Get Unicode words from a string (excludes punctuation and whitespace).
 
 ### `unicode_sentences(text: str) -> list[str]`
+
 Split a string into sentences according to Unicode rules.
 
 ### `text_width(text: str) -> int`
+
 Get the display width of a string in columns (as it would appear in a terminal). East Asian characters typically take 2 columns.
 
 ## Building for Distribution

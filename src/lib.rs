@@ -1,3 +1,7 @@
+// Copyright © Michal Čihař <michal@weblate.org>
+//
+// SPDX-License-Identifier: MIT
+
 #[pyo3::pymodule(gil_used = false)]
 mod unicode_segmentation_rs {
     use pyo3::prelude::*;

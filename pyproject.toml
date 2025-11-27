@@ -1,15 +1,15 @@
 [build-system]
-requires = ["maturin>=1.10.0,<2.0"]
 build-backend = "maturin"
+requires = ["maturin>=1.10.0,<2.0"]
 
 [project]
-name = "unicode-segmentation-rs"
-version = "0.1.0"
+classifiers = [
+  "Programming Language :: Rust",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy"
+]
 description = "Python bindings for the Rust unicode-segmentation crate"
+name = "unicode-segmentation-rs"
 readme = "README.md"
 requires-python = ">=3.10"
-classifiers = [
-    "Programming Language :: Rust",
-    "Programming Language :: Python :: Implementation :: CPython",
-    "Programming Language :: Python :: Implementation :: PyPy",
-]
+version = "0.1.0"
