@@ -1,3 +1,7 @@
+# Copyright © Michal Čihař <michal@weblate.org>
+#
+# SPDX-License-Identifier: MIT
+
 name: CI
 
 on:
@@ -49,7 +53,14 @@ jobs:
       uses: PyO3/maturin-action@86b9d133d34bc1b40018696f782949dac11bd380 # v1.49.4
       with:
         target: ${{ matrix.platform.target }}
-        args: --release --out dist -i python3.13t,python3.14t
+        args: --release --out dist -i python3.14t
+        sccache: false
+        manylinux: auto
+    - name: Build free-threaded wheels
+      uses: PyO3/maturin-action@86b9d133d34bc1b40018696f782949dac11bd380 # v1.49.4
+      with:
+        target: ${{ matrix.platform.target }}
+        args: --release --out dist -i python3.13t
         sccache: false
         manylinux: auto
     - name: Upload wheels
@@ -89,7 +100,15 @@ jobs:
       uses: PyO3/maturin-action@86b9d133d34bc1b40018696f782949dac11bd380 # v1.49.4
       with:
         target: ${{ matrix.platform.target }}
-        args: --release --out dist -i python3.13t,python3.14t
+        args: --release --out dist -i python3.13t
+
+        sccache: false
+        manylinux: musllinux_1_2
+    - name: Build free-threaded wheels
+      uses: PyO3/maturin-action@86b9d133d34bc1b40018696f782949dac11bd380 # v1.49.4
+      with:
+        target: ${{ matrix.platform.target }}
+        args: --release --out dist -i python3.14t
 
         sccache: false
         manylinux: musllinux_1_2
@@ -130,7 +149,13 @@ jobs:
       uses: PyO3/maturin-action@86b9d133d34bc1b40018696f782949dac11bd380 # v1.49.4
       with:
         target: ${{ matrix.platform.target }}
-        args: --release --out dist -i python3.13t,python3.14t
+        args: --release --out dist -i python3.13t
+        sccache: false
+    - name: Build free-threaded wheels
+      uses: PyO3/maturin-action@86b9d133d34bc1b40018696f782949dac11bd380 # v1.49.4
+      with:
+        target: ${{ matrix.platform.target }}
+        args: --release --out dist -i python3.14t
         sccache: false
     - name: Upload wheels
       uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
@@ -164,7 +189,14 @@ jobs:
       uses: PyO3/maturin-action@86b9d133d34bc1b40018696f782949dac11bd380 # v1.49.4
       with:
         target: ${{ matrix.platform.target }}
-        args: --release --out dist -i python3.13t,python3.14t
+        args: --release --out dist -i python3.13t
+
+        sccache: false
+    - name: Build free-threaded wheels
+      uses: PyO3/maturin-action@86b9d133d34bc1b40018696f782949dac11bd380 # v1.49.4
+      with:
+        target: ${{ matrix.platform.target }}
+        args: --release --out dist -i python3.14t
 
         sccache: false
     - name: Upload wheels
