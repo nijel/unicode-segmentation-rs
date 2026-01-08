@@ -63,7 +63,6 @@ class TestReadmeBasicUsage:
         """Test character width examples from README"""
         assert unicode_segmentation_rs.text_width('A') == 1
         assert unicode_segmentation_rs.text_width('世') == 2
-        # Tab character (and other control characters) have width 1
         assert unicode_segmentation_rs.text_width('\t') == 1
 
 
