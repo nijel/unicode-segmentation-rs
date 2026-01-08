@@ -54,7 +54,10 @@ jobs:
         version: 0.9.22
         activate-environment: 'true'
     - run: uv sync
-    - run: pytest
+    - name: Run tests
+      run: pytest
+    - name: Verify README examples
+      run: pytest tests/test_readme_examples.py -v
 
 
   linux:
